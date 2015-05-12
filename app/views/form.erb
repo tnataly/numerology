@@ -1,0 +1,83 @@
+<div class="row">
+
+
+<form class="panel panel-primary col-md-3" action="/" method="post">
+
+	<div class="panel-heading"> 
+		<h3 class="panel-title">Enter your birthdate</h3>
+	</div>
+	<div class="panel-body">
+		<!--<input class="form-control input-lg" type="date" name="birthdate" /> 
+		For creating validations-->
+		<!-- Show error message div in case of error -->
+		<% if @error %> 
+			<div class="alert alert-dismissible alert-warning">
+  				<button type="button" class="close" data-dismiss="alert">×</button>
+  				<strong>Validation error</strong>
+  				<p><%= @error %></p>
+			</div>
+		<% end %>
+
+		<input class="form-control input-lg" type="text" name="birthdate" />
+		<input class="btn btn-primary" type="submit" />		
+	</div>
+
+
+</form>
+<div class="col-md-6 jumbotron">
+	This Numerology App is based on the birth path number! The birth path number is determined by doing a little bit of math magic with your date of birth. Your birthdate is reduced down to a single digit, 1-9. That number corresponds to a specific message about your path in life and place in the world. 
+	Enter the birthdate on your left and read about your number.
+	<a href="http://www.cafeastrology.com/numerology.html">Read more</a>
+
+</div>
+<div class="col-md-3"> 
+	<div class="list-group">
+		<a href="#" class="list-group-item active"><font>Entering birthdate</font></a>
+  		<a href="/newpage/" class="list-group-item"><font>Messages about all numbers</font></a>
+  	</div>	
+  	<h4>Message by number:<h4>
+		<ul class= "pagination pagination-sm">
+			<li><a href="/message/1">1</a></li>
+			<li><a href="/message/2">2</a></li>
+			<li><a href="/message/3">3</a></li>
+			<li><a href="/message/4">4</a></li>
+			<li><a href="/message/5">5</a></li>
+			<li><a href="/message/6">6</a></li>
+			<li><a href="/message/7">7</a></li>
+			<li><a href="/message/8">8</a></li>
+			<li><a href="/message/9">9</a></li>
+		</ul>	
+
+  
+</div>
+
+</div>
+<div class="progress progress-striped active">
+	<div class="progress-bar" style="width: 100%; clear: both;"></div>
+</div>
+
+
+<!--
+<div class="form-style-10">
+<h1>Numerology App<span>Please, enter your data below</span></h1>
+<form action="/" method="post">
+    <div class="section"><span>1</span>First &amp; Last Name</div>
+    <div class="inner-wrap">
+        <label>First Name<input type="text" name="first_name" /></label>
+        <label>Last Name<input type="text" name="last_name" /></label>
+    </div>
+
+    <div class="section"><span>2</span>Your birthdate</div>
+    <div class="inner-wrap">
+        <label>Enter your birthdate<input type="text" name="birthdate" /></label>
+   </div>
+
+    <div class="button-section">
+     <input type="submit" name="Submit" />
+     <span class="privacy-policy">
+     <input type="checkbox" name="checkbox_terms">You agree to our Terms and Policy. 
+     </span>
+    </div>
+</form>
+</div>
+-->
