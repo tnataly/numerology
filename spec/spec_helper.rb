@@ -1,24 +1,20 @@
-
 # we need to tell Rack (remember what Rack is?) that we are just testing.
 # normally this is 'development'
 ENV['RACK_ENV'] = 'test'
-
-# look in this directory!
-$:.unshift File.join(File.dirname(__FILE__))
-require_relative File.join(File.dirname(__FILE__), "../numerology")  # <-- your sinatra app
 
 # require testing gems
 require 'rspec'
 require 'rack/test'
 
+OUTER_APP = Rack::Builder.parse_file('config.ru').first
 
 module SpecHelper
   include Rack::Test::Methods  
   # Rack::Test looks for this app variable
-  def app
-    Sinatra::Application
+  def app() 
+    OUTER_APP
   end
-    
+  
   # I'm being lazy a.k.a thinking like a programmer
   # Let's map the numerology number to the message with a hash
   # To stretch yourself, you could try this in your web app!

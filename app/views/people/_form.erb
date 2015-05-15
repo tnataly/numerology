@@ -1,0 +1,26 @@
+<form class="panel panel-primary" action="<%= people_form_action(@person) %>" method="post" id="<%= people_form_id(@person) %>" class="<%= people_form_class(@person) %>" >
+	<!-- To resolve put request-->
+	<input type="hidden" name="_method" value="<%=  people_form_method(@person) %>" />
+	
+	<div class="panel-heading"> 
+		<h3 class="panel-title">Person's data</h3>
+	</div>
+
+	<div class="panel-body">
+		<!-- Show error message div in case of error -->
+		<% if @errors %> 
+			<div class="alert alert-dismissible alert-warning">
+  				<button type="button" class="close" data-dismiss="alert">×</button>
+  				<strong>Validation error</strong>
+  				<p><%= @errors %></p>
+			</div>
+		<% end %>
+
+		<label> First Name <input class="form-control input-lg" type="text" name="first_name" value="<%= @person.first_name %>" /> </label>
+		<label> Last Name <input class="form-control input-lg" type="text" name="last_name" value="<%= @person.last_name %>" /> </label>
+		<label> Birthdate <input class="form-control input-lg" type="date" name="birthdate" value="<%= @person.birthdate %>" /> </label>
+	
+		<input class="btn btn-primary" type="submit" />		
+	</div>
+
+</form>

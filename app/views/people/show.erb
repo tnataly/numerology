@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">This is a person show page</h3>
+  </div>
+  <div class="panel-body">
+    First name: <%= @person.first_name %> <br>
+	Last name: <%= @person.last_name %> <br>
+	Birthdate: <%= @person.birthdate.strftime("%-d of %B, %Y") %> <br>
+  <a href="/people/<%= @person.id %>/edit">Edit this person</a>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">His numerology number is <%= @magic_num %></h3>
+  </div>
+  <div class="panel-body">
+    <%= @message %><br>
+  </div>
+</div>
+
+<a href="/people/">Back to people list</a>
