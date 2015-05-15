@@ -10,12 +10,16 @@ def setup_index_view
 	erb :numerology	
 end
 
-get '/newpage' do
+get '/messages' do
 	@all_messages = Array.new
 	(1..9).each do |i|
 		@all_messages << Person.message_output(i.to_s) 
 	end
-	erb :newpage
+	erb :messages
+end
+
+get '/about' do
+	erb :about
 end
 
 get '/:birthdate' do 

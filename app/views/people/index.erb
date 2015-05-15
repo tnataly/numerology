@@ -1,20 +1,21 @@
-<h1>People</h1>
-<p> <a href="/people/new">Add new person</a></p>
+<div class="header">
+	<h3>People <br><small> Person -> Show All </small> </h3>
+	<hr />
+</div>
 
-<table>
+<table class="table table-striped table-hover">
 	<thead>
-		<th>Edit</th>
+		<th>#</th>
 		<th>Full name</th>
 		<th>Birthdate</th>
-		<th>Delete</th>
+		<th colspan="2">Actions</th>
 	</thead>
 
 	<tbody>
+	<% i=1 %>
 	<% @people.each do |person| %>
 		<tr>
-			<td>
-				<a class="btn btn-link" href="/people/<%= person.id %>/edit"> edit </a>
-			</td>
+			<td> <%= i %> </td>
 			<td><a href="/people/<%= person.id %>"> 
 				<%= "#{person.first_name} #{person.last_name}" %>
 				</a>
@@ -29,7 +30,11 @@
 					<input type="submit" class="btn btn-link" value="delete" />
 				</form>	
 			</td>
+			<td>
+				<a class="btn btn-link" href="/people/<%= person.id %>/edit"> edit </a>
+			</td>
 		</tr>
+		<% i += 1 %>
 	<% end %>	
 	</tbody>
 </table>
