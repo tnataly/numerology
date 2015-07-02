@@ -1,0 +1,13 @@
+== Numerology Calculator
+
+This Numerology App is based on the birth path number! The birth path number is determined by doing a little bit of math magic with your date of birth. Enter the birthdate on your left and read about your number.
+
+=== Technologies
+* Ruby 2.2.2, Sinatra 1.4.6
+* PostgreSQL
+* Free Bootstrap theme from {Bootswatch}[http://bootswatch.com]
+* RSpec
+* Facker gem for creating seed data
+
+=== Tests
+Run the test suite with <tt>rake</tt> or <tt>rspec spec</tt>
